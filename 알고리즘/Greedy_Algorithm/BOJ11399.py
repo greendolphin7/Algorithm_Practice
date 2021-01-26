@@ -1,3 +1,5 @@
+# ATM
+
 total_person_number = int(input())  # 5
 time_list = list(map(int, input().split(" ")))  # 3 1 4 3 2
 
