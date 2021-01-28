@@ -42,7 +42,9 @@ def cal_num(word_list):
 print(cal_num(word_list))
 
 
-### 시행착오 코드  // 가장 긴 단어를 찾는 것보다 키를 이용한 접근이 더 수월하다.
+### 시행착오 코드  // 가장 긴 단어 첫머리를 찾는 것보다 가중치 계산 후 키를 이용한 접근이 더 수월하다.
+
+### 아래 코드는 ABC, CBA, CCC 경우일 때 최적값을 못찾는다.
 
 # import sys
 # import copy
