@@ -1,3 +1,5 @@
+# 단어 수학
+
 import sys
 
 def input():
