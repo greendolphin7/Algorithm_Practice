@@ -1,3 +1,5 @@
+# 소인수분해
+
 N = int(input())
 
 for i in range(2, N+1):  # 2 ~ N 까지의 소인수 후보중
