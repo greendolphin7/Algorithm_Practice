@@ -1,6 +1,5 @@
 # 거스름돈
-
-coin_list = [5, 2]  
+  
 change = int(input())  # 거슬러줄 돈
 
 total_count = 0                     # 거슬러주는 동전 총 갯수
