@@ -9,32 +9,13 @@ a, b = input().split()
 a = int(a)
 b = int(b)
 
-def factor_maker(n):
-    factor_list = []
-    for i in range(2, n+1):  
+# 접근 방식: 최대 공배수 = 두 수의 곱 / 최대 공약수
+# 먼저 최대공약수를 구한 후, 정답을 출력한다.
 
-        while n % i == 0:
-            factor_list.append(i)    
-            n /= i
+def gcd(x, y):              # 최대공약수를 구하기 위한 함수
+    while y != 0:           # y가 0이 아니라면
+        x, y = y, x % y     # x를 y와 바꾸고 y는 x의 나머지로 바꿔준다.
+    return x
 
-    return factor_list
-
-a_factor = factor_maker(a)
-b_factor = factor_maker(b)
-
-common_factor_list = []
-for factor in b_factor:
-    if factor in a_factor:
-        common_factor_list.append(factor)
-    else:
-        continue
-
-
-
-answer = 1
-for factor in common_factor_list:
-    answer = answer * factor
-print(answer)
-
-answer = a * b // answer
+answer = a * b // gcd(a, b)
 print(answer, end='')
