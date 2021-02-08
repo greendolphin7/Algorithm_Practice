@@ -1,3 +1,5 @@
+# 음계
+
 a = list(map(int, input().split(' ')))
 score = 0
 
