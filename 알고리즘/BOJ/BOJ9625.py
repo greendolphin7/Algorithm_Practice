@@ -1,24 +1,13 @@
 # BABBA
 
-K = int(input())
-result = 'A'
-A_count = result.count('A')
-B_count = result.count('B')
-while K != 1:
-    result = 'A'
-    A_count = result.count('A')
-    B_count = result.count('B')
-    temp_A = ''
-    for i in range(A_count):
-        temp_A += 'B'
-    temp_B = ''
-    for j in range(B_count):
-        temp_B += 'BA'
-    
-    result += temp_B + temp_A
-    A_count = result.count('A')
-    B_count = result.count('B')
-    print(result)
-    K -= 1
+K = int(input())    # 반복 횟수
+A = 1               # 초기 A의 갯수
+B = 0               # 초기 B의 갯수
 
-print(A_count, B_count, end='')
+for i in range(K):  # K번 반복
+    preB = A        # B가 바뀌기 전에 B의 갯수 = A
+    A -= A          # A의 갯수는 모두 없어짐
+    A += B          # A의 갯수 만큼 B의 갯수가 생김
+    B += preB       # 미리 저장해두었던 A의 갯수만큼 B가 생김
+
+print(A, B, end='')
