@@ -1,3 +1,5 @@
+# 오목 판정
+
 def find_card(card_list):
     space_list = []
     heart_list = []
