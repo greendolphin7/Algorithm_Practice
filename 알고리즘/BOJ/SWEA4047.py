@@ -1,4 +1,4 @@
-# 오목 판정
+# 영준이의 카드 카운팅
 
 def find_card(card_list):
     space_list = []
