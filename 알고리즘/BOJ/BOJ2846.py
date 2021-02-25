@@ -1,16 +1,16 @@
 # 오르막길
-
 N = int(input())
 
-road = list(map(int, input().split()))
+steps = list(map(int, input().split()))
 
 distance = 0
-distance_list = []
-for i in range(len(road) - 1):
-    if road[i + 1] <= road[i]:
+max_step = 0
+for i in range(len(steps) - 1):
+    if steps[i] >= steps[i + 1]:
         distance = 0
     else:
-        distance += road[i + 1] - road[i]
-    distance_list.append(distance)
-        
-print(max(distance_list))
+        distance += steps[i + 1] - steps[i]
+    
+    if max_step < distance:
+        max_step = distance
+print(max_step)
