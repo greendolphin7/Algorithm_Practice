@@ -25,9 +25,7 @@ def BFS(graph, start_node):
 
 
 def DFS_recursion(v):
-    global count
     visited[v] = True
-    count += 1
     for e in graph[v]:
         if not visited[e]:
             DFS(e)
