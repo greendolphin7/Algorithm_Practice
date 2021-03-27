@@ -1,32 +1,25 @@
 # 키로거
 import sys
-from collections import deque
-
-def input():
-    return sys.stdin.readline()
 
 T = int(input())
 
 for tc in range(T):
-        
     L = input()
-    password = list()
-    cursor = 0
+    left_stack = []
+    right_stack = []
+
     for i in L:
         if i == '<':
-            if cursor <= 0:
-                cursor = 0
-                continue
-            cursor -= 1
+            if left_stack:
+                right_stack.append(left_stack.pop())
         elif i == '>':
-            if cursor >= len(password) - 1:
-                cursor = len(password) - 1
-                continue
-            cursor += 1
+            if right_stack:
+                left_stack.append(right_stack.pop())
         elif i == '-':
-            password.pop(cursor)
+            if left_stack:
+                left_stack.pop()
         else:
-            password.insert(cursor, i)
-            cursor += 1
+            left_stack.append(i)
 
-    print(''.join(password))
+    left_stack.extend(reversed(right_stack))
+    print(''.join(left_stack))
