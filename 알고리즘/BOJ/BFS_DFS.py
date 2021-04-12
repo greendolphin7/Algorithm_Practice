@@ -28,7 +28,7 @@ def DFS_recursion(v):
     visited[v] = True
     for e in graph[v]:
         if not visited[e]:
-            DFS(e)
+            DFS_recursion(e)
     
     
 graph = dict()
